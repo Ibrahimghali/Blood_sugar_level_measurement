@@ -33,3 +33,6 @@ Contributions are welcome! If you find any issues or have suggestions for improv
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+
+## Note
+This project is currently in progress 🔨.
