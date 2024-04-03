@@ -3,4 +3,11 @@
     <string name="title_text">Measure the level of glycemia</string>
     <string name="button">Button</string>
     <string name="consulter">Consulter</string>
+    <string name="consult" />
+    <string name="blood_sugar_level_measurement" />
+    <string name="your_age" />
+    <string name="are_you_fasting" />
+    <string name="yes" />
+    <string name="no" />
+    <string name="measured_value_in_mmol_l" />
 </resources>
