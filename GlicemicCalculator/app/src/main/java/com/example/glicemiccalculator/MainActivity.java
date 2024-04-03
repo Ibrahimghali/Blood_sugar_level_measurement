@@ -76,36 +76,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String calculateBloodGlucose(int age, boolean isFasting, double measuredValue) {
-        double calculatedValue;
-
-        if (isFasting) {
-            if (age <= 5) {
-                calculatedValue = measuredValue + 10;
-            } else if (age <= 12) {
-                calculatedValue = measuredValue + 20;
-            } else {
-                calculatedValue = measuredValue + 30;
-            }
-        } else {
-            if (age <= 5) {
-                calculatedValue = measuredValue + 5;
-            } else if (age <= 12) {
-                calculatedValue = measuredValue + 15;
-            } else {
-                calculatedValue = measuredValue + 25;
-            }
-        }
-
         String result;
-        if (calculatedValue < 70) {
-            result = "Low blood glucose level";
-        } else if (calculatedValue >= 70 && calculatedValue <= 100) {
-            result = "Normal blood glucose level";
-        } else if (calculatedValue > 100 && calculatedValue <= 126) {
-            result = "High blood glucose level";
+        double mmolL = measuredValue / 18.0;  // Convert mg/dL to mmol/L
+
+        if (mmolL < 3.9) {
+            result = "Low blood glucose level. Consult a doctor if you experience symptoms.";
+        } else if (mmolL >= 3.9 && mmolL <= 6.0) {
+            result = "Normal blood glucose level.";
+        } else if (mmolL > 6.0 && mmolL <= 7.0) {
+            result = "High blood glucose level. Consult a doctor to discuss this result.";
         } else {
-            result = "Very high blood glucose level";
+            result = "Very high blood glucose level. Consult a doctor immediately.";
         }
+
+        // Emphasize consulting a doctor
+        result += "\nRemember, this app is for informational purposes only. Always consult a doctor for any concerns about your blood sugar levels.";
 
         return result;
     }
